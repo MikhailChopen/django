@@ -1,0 +1,63 @@
+{% extends 'practica/base.html' %}
+
+{% block content %}
+
+	<div class="container">
+		<div class="row">
+			<div style="margin-left:0%; width:100%;" class="col-sm-11 col-sm-offset-3">
+				<div class="card card-signup">
+						
+					<div class="header header-primary text-center">
+						
+						<h3>DJANGO 1.10    PYTHON 3.5</h3>
+
+					</div>
+
+					<h5 class="text-divider">Datos Relacionados Estudiante-Curso Asignaciones</h5>
+								
+					<div class="content">								
+
+						<table class="table">
+						<tr>
+							<th>CARNET</th>
+							<th>NOMBRE</th>
+							<th>APELLIDO</th>
+							<th>ID ASIGNACION</th>
+							<th>CURSO</th>
+							<th>CICLO</th>
+						</tr>
+						
+						{% for asig in asignados %}
+							<tr>
+								<td>
+									{{ asig.carnet__carnet }}
+								</td>
+								<td>
+									{{ asig.carnet__nombre }}
+								</td>
+								<td>
+									{{ asig.carnet__apellido }}
+								</td>
+								<td>
+									{{ asig.id_asignacion }}
+								</td>
+								<td>
+									{{ asig.nombre_curso }}
+								</td>
+								<td>
+									{{ asig.ciclo }}
+								</td>
+							</tr>
+						{% endfor %}
+
+						
+						</table>
+								
+					</div>
+						
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock content %}
